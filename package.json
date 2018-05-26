@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-graphql",
+  "version": "1.0.0",
+  "description": "Nuxt GraphQL",
+  "author": "YoYea",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^1.0.0",
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.1",
+    "nodemon": "^1.11.0"
+  }
+}
