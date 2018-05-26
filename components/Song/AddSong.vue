@@ -25,7 +25,11 @@ export default {
             title: this.title
           }
         })
-        .then(() => this.$router.replace("/"));
+        .then(res => {
+          this.title = "";
+          console.log(res.data);
+          this.$router.replace("/");
+        });
     }
   }
 };

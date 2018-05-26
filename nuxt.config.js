@@ -61,13 +61,17 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: ["~plugins/vue-apollo.js", "~plugins/vue-autoload-components.js"],
+  plugins: ["~plugins/vue-autoload-components.js"],
 
   /*
   ** Nuxt.js modules
   */
-  modules: [],
-
+  modules: ["@nuxtjs/apollo"],
+  apollo: {
+    clientConfigs: {
+      default: "~/plugins/apollo/client-configs/default.js"
+    }
+  },
   /*
   ** Build configuration
   */

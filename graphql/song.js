@@ -7,3 +7,12 @@ export const ADD_SONG = gql`
     }
   }
 `;
+
+export const GET_SONGS = gql`
+  query {
+    songs {
+      id
+      title
+    }
+  }
+`;
