@@ -1,17 +1,18 @@
 import { GET_SONGS } from "../graphql/song";
 
 const state = {
-  loadedSong: []
+  loadedSongs: []
 };
 
 const mutations = {
   SET_SONGS(state, songs) {
-    state.loadedSong = songs;
+    state.loadedSongs = songs;
   }
 };
 
 const actions = {
   nuxtServerInit(store, ctx) {
+    console.log("nuxtServerInit");
     let client = ctx.app.apolloProvider.defaultClient;
     return client
       .query({ query: GET_SONGS })

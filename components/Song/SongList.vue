@@ -13,7 +13,7 @@
 export default {
   computed: {
     loadedSongs() {
-      return this.$store.state.songs.loadedSong;
+      return this.$store.state.songs.loadedSongs;
     }
   }
 };

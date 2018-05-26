@@ -16,7 +16,6 @@ requireModule.keys().forEach(filename => {
 
 const createStore = () =>
   new Vuex.Store({
-    namespaced: true,
     modules
   });
 
