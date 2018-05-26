@@ -1,5 +1,5 @@
 <template>
   <div>
-    <SongList />
+    Song List
   </div>
 </template>

@@ -1,7 +1,7 @@
-const pkg = require('./package')
+const pkg = require("./package");
 
 module.exports = {
-  mode: 'universal',
+  mode: "universal",
 
   /*
   ** Headers of the page
@@ -9,37 +9,64 @@ module.exports = {
   head: {
     title: pkg.name,
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { hid: "description", name: "description", content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href:
+          "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css",
+        integrity:
+          "sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB",
+        crossorigin: "anonymous"
+      }
+    ],
+    script: [
+      {
+        src: "https://code.jquery.com/jquery-3.3.1.slim.min.js",
+        integrity:
+          "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo",
+        crossorigin: "anonymous"
+      },
+      {
+        src:
+          "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js",
+        integrity:
+          "sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49",
+        crossorigin: "anonymous"
+      },
+      {
+        src:
+          "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js",
+        integrity:
+          "sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T",
+        crossorigin: "anonymous"
+      }
     ]
   },
 
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#FFFFFF' },
+  loading: { color: "#FFFFFF" },
 
   /*
   ** Global CSS
   */
-  css: [
-  ],
+  css: [],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins: ["~plugins/vue-apollo.js", "~plugins/vue-autoload-components.js"],
 
   /*
   ** Nuxt.js modules
   */
-  modules: [
-  ],
+  modules: [],
 
   /*
   ** Build configuration
@@ -48,8 +75,6 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-      
-    }
+    extend(config, ctx) {}
   }
-}
+};
