@@ -11,8 +11,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^1.0.0",
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "mongoose": "^5.1.2",
+    "nuxt": "^1.0.0"
   },
   "devDependencies": {
     "cross-env": "^5.0.1",
