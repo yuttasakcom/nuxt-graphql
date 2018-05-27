@@ -11,25 +11,14 @@
 </template>
 
 <script>
-import { ADD_SONG } from "../../graphql/song";
 export default {
   data: () => ({
     title: ""
   }),
   methods: {
     onSubmit() {
-      this.$apollo
-        .mutate({
-          mutation: ADD_SONG,
-          variables: {
-            title: this.title
-          }
-        })
-        .then(res => {
-          this.title = "";
-          console.log(res.data);
-          this.$router.replace("/");
-        });
+      this.$store.dispatch("ADD_SONG", { title: this.title });
+      this.title = "";
     }
   }
 };
