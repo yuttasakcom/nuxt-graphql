@@ -1,4 +1,4 @@
-import gql from "graphql-tag";
+import gql from 'graphql-tag'
 
 export const ADD_SONG = gql`
   mutation ADD_SONG($title: String!) {
@@ -7,7 +7,7 @@ export const ADD_SONG = gql`
       title
     }
   }
-`;
+`
 
 export const GET_SONGS = gql`
   query {
@@ -16,4 +16,12 @@ export const GET_SONGS = gql`
       title
     }
   }
-`;
+`
+
+export const DELETE_SONG = gql`
+  mutation DELETE_SONG($id: ID) {
+    deleteSong(id: $id) {
+      id
+    }
+  }
+`

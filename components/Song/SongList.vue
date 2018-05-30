@@ -4,6 +4,7 @@
     <ul>
       <li v-for="song in loadedSongs" :key="song.id">
         {{song.id}} {{ song.title }}
+        <button @click="onDelete(song.id)">Delete</button>
       </li>
     </ul>
   </div>
@@ -13,8 +14,13 @@
 export default {
   computed: {
     loadedSongs() {
-      return this.$store.state.songs.loadedSongs;
+      return this.$store.state.songs.loadedSongs
+    }
+  },
+  methods: {
+    onDelete(songId) {
+      this.$store.dispatch('DELETE_SONG', songId)
     }
   }
-};
+}
 </script>

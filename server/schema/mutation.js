@@ -1,11 +1,11 @@
-const graphql = require("graphql");
-const { GraphQLObjectType, GraphQLString, GraphQLID } = graphql;
+const graphql = require('graphql')
+const { GraphQLObjectType, GraphQLString, GraphQLID } = graphql
 
-const SongType = require("./songType");
-const Song = require("../models/song");
+const SongType = require('./songType')
+const Song = require('../models/song')
 
 const mutation = new GraphQLObjectType({
-  name: "Mutation",
+  name: 'Mutation',
   fields: {
     addSong: {
       type: SongType,
@@ -13,8 +13,13 @@ const mutation = new GraphQLObjectType({
         title: { type: GraphQLString }
       },
       resolve: (parentValue, { title }) => new Song({ title }).save()
+    },
+    deleteSong: {
+      type: SongType,
+      args: { id: { type: GraphQLID } },
+      resolve: (parentValue, { id }) => Song.remove({ _id: id })
     }
   }
-});
+})
 
-module.exports = mutation;
+module.exports = mutation
